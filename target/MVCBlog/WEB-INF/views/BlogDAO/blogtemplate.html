@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>asdasdasdsa</title>
+</head>
+<body>
+<h1><a href="/blog/addblog">add</a></h1>
+<div th:each="blogs : ${blog}">
+    <h1 th:text = "${blogs.getId()}"></h1>
+    <h2 th:text="${blogs.getAuthor()}"></h2>
+    <br>
+    <h3><a th:href="@{/blog/{id}(id=${blogs.getId()})}" th:text="${blogs.getText()}"></a></h3>
+    <br>
+</div>
+</body>
+</html>
