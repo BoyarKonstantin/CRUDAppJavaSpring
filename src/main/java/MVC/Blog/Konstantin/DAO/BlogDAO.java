@@ -15,7 +15,7 @@ public class BlogDAO {
         blogList = new ArrayList<BlogModel>();
 
         blogList.add(new BlogModel(++ID, "TextText",
-                    "Author1", "asklfnlaksjk"));
+                "Author1", "asklfnlaksjk"));
         blogList.add(new BlogModel(++ID, "TextText1",
                 "Author2", "asklfnlaksjk"));
         blogList.add(new BlogModel(++ID, "TextText2",
@@ -24,21 +24,27 @@ public class BlogDAO {
                 "Author4", "asklfnlaksjk"));
 
     }
-    public List<BlogModel> index(){
+
+    public List<BlogModel> index() {
         return blogList;
     }
 
-    public BlogModel show(int id){
+    public BlogModel show(int id) {
         return blogList.stream().filter(person -> person.getId() == id).findAny().orElse(null);
     }
 
-    public void save(BlogModel blogModel){
+    public void save(BlogModel blogModel) {
         blogModel.setId(++ID);
         blogList.add(blogModel);
     }
-    public void update(int id, BlogModel updateBlogModel){
+
+    public void update(int id, BlogModel updateBlogModel) {
         BlogModel modelToBeUpdated = show(id);
         modelToBeUpdated.setAuthor(updateBlogModel.getAuthor());
         modelToBeUpdated.setText(updateBlogModel.getText());
+    }
+
+    public void delete(int id) {
+        blogList.removeIf(blog -> blog.getId() == id);
     }
 }
