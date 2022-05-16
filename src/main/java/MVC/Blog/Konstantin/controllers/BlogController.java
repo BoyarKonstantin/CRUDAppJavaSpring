@@ -58,4 +58,10 @@ public class BlogController {
 
     }
 
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") int id) {
+        blogDAO.delete(id);
+        return "redirect:/blog";
+    }
+
 }
