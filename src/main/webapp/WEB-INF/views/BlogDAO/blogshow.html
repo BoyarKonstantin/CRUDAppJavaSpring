@@ -7,5 +7,7 @@
 <body>
 <p th:text="${blogs.getAuthor()}">VALUE</p>
 <p th:text="${blogs.getText()}">VALUE</p>
+<a th:href="@{{id}/edit(id = ${blogs.getId()})}">EDIT</a>
+
 </body>
 </html>
