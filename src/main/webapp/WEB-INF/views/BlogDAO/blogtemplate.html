@@ -11,7 +11,10 @@
     <h2 th:text="${blogs.getAuthor()}"></h2>
     <br>
     <h3><a th:href="@{/blog/{id}(id=${blogs.getId()})}" th:text="${blogs.getText()}"></a></h3>
-    <br>
+    <br/>
+    <hr/>
 </div>
+<br/>
+</h1><a href = "/blog/addblog">Add new publication</a><h1/>
 </body>
 </html>
