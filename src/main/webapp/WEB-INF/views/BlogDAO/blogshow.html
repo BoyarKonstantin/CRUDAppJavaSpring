@@ -8,6 +8,8 @@
 <p th:text="${blogs.getAuthor()}">VALUE</p>
 <p th:text="${blogs.getText()}">VALUE</p>
 <a th:href="@{{id}/edit(id = ${blogs.getId()})}">EDIT</a>
-
+<form th:method="DELETE" th:action = "@{/blog/{id}(id = ${blogs.getId()})}">
+    <input type="submit" value="DELETE">
+</form>
 </body>
 </html>
